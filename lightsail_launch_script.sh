@@ -33,12 +33,10 @@ cd $APP_DIR
 
 # Navigate to app directory and install dependencies
 cd $APP_DIR || exit 1
-python3 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip
-# Use -r requirements.txt to install all dependencies
-pip install -r requirements.txt
-deactivate
+# Create venv as the ubuntu user
+sudo -u $APP_USER python3 -m venv venv
+# Install dependencies as the ubuntu user
+sudo -u $APP_USER /bin/bash -c "source $APP_DIR/venv/bin/activate && pip install --upgrade pip && pip install -r $APP_DIR/requirements.txt"
 
 # --- Application Service Setup (using Systemd) ---
 echo "Setting up systemd service for the chat app..."
