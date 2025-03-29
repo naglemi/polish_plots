@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>AGNTCY Chat</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <!-- CSS is served via FastAPI's StaticFiles mount -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
     <!-- Include Socket.IO client library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
 </head>
@@ -62,7 +63,7 @@
             item.textContent = `[${timeString}] ${msgData.sender}: ${msgData.text}`;
             messages.appendChild(item);
             // Scroll to the bottom
-            window.scrollTo(0, document.body.scrollHeight);
+            messages.scrollTop = messages.scrollHeight; // Adjusted scrolling target
         }
 
         // Listen for incoming messages from the server

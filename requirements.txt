@@ -2,5 +2,7 @@ fastapi
 uvicorn[standard]
 jinja2
 python-multipart
+websockets # Explicitly add for clarity
+python-socketio # Add Socket.IO library
 flake8>=6.0.0
 black>=23.0.0
