@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+jinja2
+python-multipart
+flake8>=6.0.0
+black>=23.0.0

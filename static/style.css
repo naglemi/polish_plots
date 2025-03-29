@@ -1,0 +1,37 @@
+/* Basic styles */
+body {
+    font-family: sans-serif;
+}
+
+#chat-box {
+    border: 1px solid #ccc;
+    height: 400px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.message {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #e1f5fe;
+    text-align: right;
+}
+
+.agent-message {
+    background-color: #f1f8e9;
+}
+
+.cascade-message {
+    background-color: #e0f7fa;
+    font-style: italic;
+}
+
+.roo-message {
+    background-color: #fff9c4;
+    font-weight: bold;
+}

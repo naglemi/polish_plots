@@ -1,0 +1,43 @@
+{
+    "version": "1.0",
+    "agents": {
+        "cascade": {
+            "type": "agentic_assistant",
+            "transport": "http",
+            "auto_approve": true,
+            "capabilities": [
+                "file_system",
+                "command_execution",
+                "tool_invocation"
+            ]
+        },
+        "github-copilot": {
+            "type": "code_completion",
+            "transport": "vscode-extension",
+            "auto_approve": true,
+            "capabilities": [
+                "code_suggestions",
+                "documentation"
+            ]
+        },
+        "roo-code": {
+            "type": "code_assistant",
+            "transport": "http",
+            "auto_approve": true,
+            "capabilities": [
+                "code_analysis",
+                "refactoring"
+            ]
+        }
+    },
+    "shared_context": {
+        "workspace": "/home/naglemi/CascadeProjects/polish_plots",
+        "mission_file": ".agntcy-mission",
+        "protocol": "acp-1.0"
+    },
+    "security": {
+        "trust_level": "workspace",
+        "allow_system_access": true,
+        "allow_network_access": true
+    }
+}
